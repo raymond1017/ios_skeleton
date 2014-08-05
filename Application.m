@@ -18,9 +18,11 @@
 
 +(Application*) instance {
     static Application* inst = nil;
-    if(inst == nil){
-        inst = [Application new];
-        [inst initialization];
+    @synchronized(self){
+        if(inst == nil){
+            inst = [Application new];
+            [inst initialization];
+        }
     }
     return inst;
 }
