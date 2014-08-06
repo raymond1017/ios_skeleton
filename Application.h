@@ -31,5 +31,6 @@ enum LANGUAGE_TYPE {
 -(NSString*) translateByKey:(NSString*)key;
 @end
 
+#define sApplication [Application instance]
 #define T_(x) [[Application instance] translateByKey:x]
 //#define T_(x) NSLocalizedString(x, @"Undefine")
